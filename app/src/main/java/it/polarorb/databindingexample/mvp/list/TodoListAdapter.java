@@ -54,6 +54,8 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
 
         public TodoViewHolder(View itemView) {
             super(itemView);
+            // We have effectively tethered the view to the code with this implementation. Alterations to view structure necessitate
+            // changes here. This can be avoided with databinding.
             titleTextView = (TextView) itemView.findViewById(R.id.title);
             descriptionTextView = (TextView) itemView.findViewById(R.id.description);
             dateTextView = (TextView) itemView.findViewById(R.id.date);
