@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DatabindingExample</string>
+    <string name="mvvm">MVVM</string>
+    <string name="mvp">MVP</string>
+    <string name="main_text_explanation">Welcome to the my DatabindingExample application. Each button below will take you to a different version of the same example To-Do List application. One was created using the MVP pattern, while the other was created using MVVM. Hopefully, this will help illustrate the differences between them.</string>
+    <string name="to_do">To-Do:</string>
+</resources>
