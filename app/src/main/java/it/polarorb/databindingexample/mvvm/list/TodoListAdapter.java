@@ -42,6 +42,8 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
         return todoList.size();
     }
 
+    // In the MVVM implementation of this, we can see that we have removed all references to specific views in our To-do list items
+    // which means we can alter what data goes where an how it's displayed without fear of needing to alter anything in this entire class.
     public class TodoViewHolder extends RecyclerView.ViewHolder {
         private final ItemTaskBinding binding;
 
