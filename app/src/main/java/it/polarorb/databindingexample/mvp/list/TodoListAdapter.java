@@ -35,6 +35,8 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
     @Override
     public void onBindViewHolder(TodoViewHolder holder, int position) {
         Todo todo = todoList.get(position);
+        // The following is illustrative of how coupling is more prone to occur in these circumstances.
+        // We are formatting and altering the UI from within an adapter.
         holder.titleTextView.setText(todo.getTitle());
         holder.dateTextView.setText(simpleDateFormat.format(todo.getDate()));
         holder.descriptionTextView.setText(todo.getDescription());
