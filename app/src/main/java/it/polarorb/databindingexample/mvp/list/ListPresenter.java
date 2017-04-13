@@ -7,15 +7,18 @@ import it.polarorb.databindingexample.common.MockData;
 import it.polarorb.databindingexample.models.Todo;
 
 public class ListPresenter {
-
-    private final MvpTodoListAdapter listAdapter;
+    private final TodoListAdapter adapter;
     private List<Todo> todos = MockData.getMockList();
 
-    public ListPresenter(MvpTodoListAdapter listAdapter) {
-        this.listAdapter = listAdapter;
+    public ListPresenter(TodoListAdapter adapter) {
+        this.adapter = adapter;
     }
 
-    public MvpTodoListAdapter getListAdapter() {
-        return listAdapter;
+    public TodoListAdapter getAdapter() {
+        return adapter;
+    }
+
+    public void onResume() {
+        adapter.setTodoList(todos);
     }
 }

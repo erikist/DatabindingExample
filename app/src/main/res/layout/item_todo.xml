@@ -10,11 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:text="@string/to_do"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
+            android:textColor="@color/white"
             android:id="@+id/title"
             tools:text="Wake Up"
             android:layout_width="wrap_content"
@@ -25,6 +27,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"/>
         <TextView
+            android:textColor="@color/white"
             android:id="@+id/date"
             tools:text="3:30PM 12/31/17"
             android:layout_width="wrap_content"
@@ -32,6 +35,7 @@
             android:layout_marginLeft="8dp"/>
     </LinearLayout>
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/description"
         tools:text="Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my exercise so in. Procured shutters mr it feelings. To or three offer house begin taken am at. As dissuade cheerful overcame so of friendly he indulged unpacked. Alteration connection to so as collecting me. Difficult in delivered extensive at direction allowance. Alteration put use diminution can considered sentiments interested discretion. An seeing feebly stairs am branch income me unable.
 

@@ -16,8 +16,8 @@ public class DatabindingExampleApplication extends Application {
         return DaggerDatabindingExampleApplicationComponent
                 .builder()
                 .mainModule(new MainModule(this))
-                .viewModelModule(new ViewModelModule())
-                .presenterModule(new PresenterModule())
+                .mvvmModule(new MvvmModule())
+                .mvpModule(new MvpModule())
                 .build();
     }
 

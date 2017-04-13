@@ -18,12 +18,14 @@
             android:padding="16dp">
 
             <TextView
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/to_do"
                 android:textStyle="bold"/>
 
             <TextView
+                android:textColor="@color/white"
                 android:text="@{viewModel.getTitle()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,6 +38,7 @@
                 android:layout_weight="1"/>
 
             <TextView
+                android:textColor="@color/white"
                 android:text="@{viewModel.getDate()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,6 +47,7 @@
         </LinearLayout>
 
         <TextView
+            android:textColor="@color/white"
             android:text="@{viewModel.getDescription()}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
