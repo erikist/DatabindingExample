@@ -4,6 +4,7 @@ import dagger.Module;
 import dagger.Provides;
 import it.polarorb.databindingexample.mvvm.list.ListViewModel;
 import it.polarorb.databindingexample.mvvm.list.TodoListAdapter;
+import it.polarorb.databindingexample.mvvm.add.AddViewModel;
 
 @Module
 public class MvvmModule {
@@ -15,5 +16,10 @@ public class MvvmModule {
     @Provides
     public ListViewModel providesListViewModel(TodoListAdapter adapter) {
         return new ListViewModel(adapter);
+    }
+
+    @Provides
+    public AddViewModel providesAddViewModel() {
+        return new AddViewModel();
     }
 }

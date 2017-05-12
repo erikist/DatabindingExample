@@ -7,16 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import it.polarorb.databindingexample.R;
+import it.polarorb.databindingexample.common.Formatters;
 import it.polarorb.databindingexample.models.Todo;
 
 public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoViewHolder> {
     List<Todo> todoList = new ArrayList<>();
-    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
 
     public void setTodoList(List<Todo> todoList) {
         this.todoList.clear();
@@ -38,7 +37,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
         // The following is illustrative of how coupling is more prone to occur in these circumstances.
         // We are formatting and altering the UI from within an adapter.
         holder.titleTextView.setText(todo.getTitle());
-        holder.dateTextView.setText(simpleDateFormat.format(todo.getDate()));
+        holder.dateTextView.setText(Formatters.TODO_DATE_FORMATTER.format(todo.getDate()));
         holder.descriptionTextView.setText(todo.getDescription());
     }
 

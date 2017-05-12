@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     @Override
     public void onBackPressed() {
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+                getSupportActionBar().setTitle(R.string.app_name);
+            }
+
             getSupportFragmentManager().popBackStack();
         } else {
             super.onBackPressed();
@@ -63,13 +67,16 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
 
     public void shouldDisplayHomeUp(){
         //Enable Up button only  if there are entries in the back stack
-        boolean canback = getSupportFragmentManager().getBackStackEntryCount()>0;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(canback);
+        boolean canGoBack = getSupportFragmentManager().getBackStackEntryCount() > 0;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(canGoBack);
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         //This method is called when the up button is pressed. Just the pop back stack.
+        if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+            getSupportActionBar().setTitle(R.string.app_name);
+        }
         getSupportFragmentManager().popBackStack();
         return true;
     }

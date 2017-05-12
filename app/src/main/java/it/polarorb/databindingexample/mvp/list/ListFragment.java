@@ -2,6 +2,7 @@ package it.polarorb.databindingexample.mvp.list;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 
 import javax.inject.Inject;
 
+import it.polarorb.databindingexample.MainActivity;
 import it.polarorb.databindingexample.R;
 import it.polarorb.databindingexample.base.BaseFragment;
 import it.polarorb.databindingexample.dagger.DatabindingExampleApplication;
@@ -23,6 +25,7 @@ public class ListFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ((DatabindingExampleApplication)getActivity().getApplication()).getDatabindingExampleApplicationComponent().inject(this);
+        listPresenter.setFragmentManager(getFragmentManager());
     }
 
     @Nullable
@@ -34,12 +37,17 @@ public class ListFragment extends BaseFragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
+        FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(listPresenter::onAddClicked);
         return view;
     }
+
+
 
     @Override
     public void onResume() {
         super.onResume();
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle(getClass().getSimpleName());
         listPresenter.onResume();
     }
 }

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import javax.inject.Inject;
 
+import it.polarorb.databindingexample.MainActivity;
 import it.polarorb.databindingexample.R;
 import it.polarorb.databindingexample.base.BaseFragment;
 import it.polarorb.databindingexample.dagger.DatabindingExampleApplication;
@@ -26,6 +27,7 @@ public class ListFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ((DatabindingExampleApplication)getActivity().getApplication()).getDatabindingExampleApplicationComponent().inject(this);
+        listViewModel.setFragmentManager(getFragmentManager());
     }
 
     @Nullable
@@ -45,6 +47,7 @@ public class ListFragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle(getClass().getSimpleName());
         listViewModel.onResume();
     }
 }
