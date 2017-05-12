@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="it.polarorb.databindingexample.mvvm.add.AddViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <android.support.design.widget.TextInputEditText
+                    android:text="@={viewModel.whatToDo}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/what_to_do"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2">
+
+                <android.support.design.widget.TextInputEditText
+                    android:focusable="false"
+                    android:text="@{viewModel.dateString}"
+                    android:onClick="@{viewModel.onDateClicked}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/when_to_do"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.howToDo}"
+                android:hint="@string/how_you_do_your_to_do"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:onClick="@{viewModel.onAddClicked}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_todo"/>
+    </LinearLayout>
+</layout>
