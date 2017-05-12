@@ -74,6 +74,7 @@ public class AddFragment extends BaseFragment {
             }
         });
         whenTextField = (EditText) view.findViewById(R.id.when_text_input);
+        whenTextField.setOnClickListener(addPresenter::onDateClicked);
         whenTextField.setText(addPresenter.getDateString());
         addPresenter.setOnDateChangedListener((view1, year, monthOfYear, dayOfMonth) -> whatTextField.setText(addPresenter.getDateString()));
         return view;
